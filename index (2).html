@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WhiteOceanBook — English Vocabulary for SSC & Banking</title>
+<meta name="description" content="WhiteOceanBook — offline English vocabulary app for SSC, Banking & government exams. 10,000+ questions including PYQs, with detailed solutions." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --navy: #15173D;
+    --navy-deep: #0F1130;
+    --blue: #1D4ED8;
+    --blue-soft: #E6EBFB;
+    --amber: #F59E0B;
+    --bg: #DDEAE5;          /* light mint, like the app */
+    --surface: #FFFFFF;
+    --text: #0F172A;
+    --muted: #64748B;
+    --border: #E3E8F2;
+    --green-bg: #DCFCE7;
+    --green: #15803D;
+    --radius: 18px;
+    --shadow: 0 10px 30px rgba(15,23,61,0.08);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, .display { font-family: 'Plus Jakarta Sans', sans-serif; }
+  .wrap { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+  a { color: inherit; text-decoration: none; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(221,234,229,0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(21,23,61,0.06);
+  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 18px; font-family: 'Plus Jakarta Sans'; }
+  .logo { width: 34px; height: 34px; border-radius: 9px; background: #fff; color: var(--blue);
+    display: grid; place-items: center; font-weight: 800; font-size: 13px; border: 1px solid var(--border); }
+  .nav-links { display: flex; gap: 26px; font-size: 14px; font-weight: 600; color: var(--navy); }
+  .nav-links a:hover { color: var(--blue); }
+  @media (max-width: 720px) { .nav-links { display: none; } }
+
+  /* HERO */
+  header.hero { padding: 60px 0 50px; }
+  .hero-card {
+    background: var(--navy);
+    border-radius: 26px;
+    padding: 48px 40px;
+    color: #fff;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-card::after {
+    content: ""; position: absolute; right: -80px; top: -80px;
+    width: 260px; height: 260px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(29,78,216,0.35), transparent 70%);
+  }
+  .hero-brand { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
+  .hero-logo { width: 52px; height: 52px; border-radius: 14px; background: #fff; color: var(--blue);
+    display: grid; place-items: center; font-weight: 800; font-size: 19px; }
+  .hero-brand span { font-size: 26px; font-weight: 800; font-family: 'Plus Jakarta Sans'; }
+  .hero h1 { font-size: clamp(28px, 5vw, 46px); line-height: 1.15; font-weight: 800; max-width: 640px; }
+  .hero .sub { color: var(--amber); font-weight: 700; margin-top: 16px; font-size: 16px; letter-spacing: .2px; }
+  .hero .stat { color: var(--amber); font-weight: 700; font-size: 16px; margin-top: 2px; }
+  .hero p.lede { color: rgba(255,255,255,0.82); margin-top: 18px; max-width: 560px; font-size: 16px; }
+  .cta-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 30px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 9px;
+    padding: 14px 24px; border-radius: 999px; font-weight: 700; font-size: 15px;
+    font-family: 'Plus Jakarta Sans'; cursor: pointer; border: none; transition: transform .12s ease, opacity .12s;
+  }
+  .btn:active { transform: scale(0.97); }
+  .btn-amber { background: var(--amber); color: #3a2a00; }
+  .btn-ghost { background: rgba(255,255,255,0.12); color: #fff; border: 1px solid rgba(255,255,255,0.25); }
+  .badge-soon { font-size: 11px; background: rgba(255,255,255,0.2); padding: 2px 8px; border-radius: 999px; margin-left: 4px; }
+
+  /* SECTION */
+  section { padding: 54px 0; }
+  .eyebrow { color: var(--blue); font-weight: 700; font-size: 13px; letter-spacing: 1.4px; text-transform: uppercase; }
+  .section-title { font-size: clamp(24px, 4vw, 34px); font-weight: 800; margin-top: 8px; color: var(--navy); }
+  .section-intro { color: var(--muted); margin-top: 10px; max-width: 620px; }
+
+  /* FEATURES */
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-top: 34px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 26px 22px; box-shadow: var(--shadow);
+  }
+  .card .ic { width: 46px; height: 46px; border-radius: 12px; background: var(--blue-soft);
+    display: grid; place-items: center; font-size: 22px; margin-bottom: 14px; }
+  .card h3 { font-size: 18px; font-weight: 700; color: var(--navy); }
+  .card p { color: var(--muted); font-size: 14.5px; margin-top: 6px; }
+
+  /* TOPICS chips */
+  .topics { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+  .topic {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+    padding: 14px 18px; display: flex; align-items: center; gap: 12px; box-shadow: var(--shadow);
+    font-weight: 700; color: var(--navy); font-size: 15px;
+  }
+  .topic .dot { width: 34px; height: 34px; border-radius: 10px; background: var(--blue-soft);
+    display: grid; place-items: center; font-size: 17px; }
+  .topic .on { font-size: 11px; color: var(--green); background: var(--green-bg); padding: 2px 8px; border-radius: 999px; font-weight: 700; }
+
+  /* BOOK */
+  .book-card {
+    background: var(--navy); color: #fff; border-radius: 24px; padding: 40px;
+    display: grid; grid-template-columns: 1fr; gap: 8px; box-shadow: var(--shadow); position: relative; overflow: hidden;
+  }
+  .book-card .eyebrow { color: var(--amber); }
+  .book-card h2 { color: #fff; }
+  .book-card p { color: rgba(255,255,255,0.82); margin-top: 12px; max-width: 640px; }
+  .book-points { margin-top: 20px; display: flex; flex-direction: column; gap: 10px; }
+  .book-points div { display: flex; align-items: flex-start; gap: 10px; color: rgba(255,255,255,0.9); font-size: 15px; }
+  .book-points .tick { color: var(--amber); font-weight: 800; }
+
+  /* PRIVACY */
+  .privacy { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 34px; box-shadow: var(--shadow); }
+  .privacy h3 { color: var(--navy); font-size: 18px; margin: 20px 0 6px; }
+  .privacy p, .privacy li { color: var(--muted); font-size: 15px; }
+  .privacy ul { margin: 6px 0 0 20px; }
+  .privacy .updated { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+  /* CONTACT */
+  .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 18px; margin-top: 30px; }
+  .contact-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 26px; box-shadow: var(--shadow); }
+  .contact-card .ic { width: 46px; height: 46px; border-radius: 12px; background: var(--blue-soft); display: grid; place-items: center; font-size: 20px; margin-bottom: 12px; }
+  .contact-card .label { font-size: 13px; color: var(--muted); font-weight: 600; }
+  .contact-card a, .contact-card .val { font-size: 17px; font-weight: 700; color: var(--navy); word-break: break-word; }
+  .contact-card a:hover { color: var(--blue); }
+
+  /* FOOTER */
+  footer { background: var(--navy-deep); color: rgba(255,255,255,0.7); padding: 34px 0; margin-top: 30px; }
+  .foot-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; }
+  .foot-brand { display: flex; align-items: center; gap: 10px; color: #fff; font-weight: 800; font-family: 'Plus Jakarta Sans'; }
+  footer a { color: rgba(255,255,255,0.7); font-size: 14px; }
+  footer a:hover { color: #fff; }
+
+  .center { text-align: center; }
+
+  /* PROGRESS / SETS DEMO */
+  .progress-wrap { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 26px; margin-top: 34px; align-items: start; }
+  @media (max-width: 780px) { .progress-wrap { grid-template-columns: 1fr; } }
+  .sets-demo {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px;
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 20px; box-shadow: var(--shadow);
+  }
+  .set-cell {
+    aspect-ratio: 1; border-radius: 12px; background: var(--c); color: var(--t);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    box-shadow: 0 3px 8px rgba(15,23,61,0.12);
+  }
+  .set-cell b { font-family: 'Plus Jakarta Sans'; font-size: 18px; font-weight: 800; line-height: 1; }
+  .set-cell small { font-size: 11px; font-weight: 700; margin-top: 3px; }
+  .legend-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 26px; box-shadow: var(--shadow); }
+  .legend-card h3 { color: var(--navy); font-size: 20px; font-weight: 800; }
+  .legend-sub { color: var(--muted); font-size: 14px; margin-top: 2px; margin-bottom: 16px; }
+  .legend { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .legend div { display: flex; align-items: center; gap: 10px; font-size: 14.5px; font-weight: 600; color: var(--navy); }
+  .legend .sw { width: 20px; height: 20px; border-radius: 6px; flex-shrink: 0; }
+  @media (max-width: 420px) { .legend { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <div class="brand"><span class="logo">WO</span> WhiteOceanBook</div>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#topics">Topics</a>
+      <a href="#progress">Progress</a>
+      <a href="#book">Book</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <div class="hero-card">
+    <div class="hero-brand">
+      <div class="hero-logo">WO</div>
+      <span>WhiteOceanBook</span>
+    </div>
+    <h1>Master English vocabulary for SSC, Banking &amp; government exams.</h1>
+    <div class="sub">English Vocabulary · SSC &amp; Others</div>
+    <div class="stat">10,000+ Questions · including PYQs</div>
+    <p class="lede">An offline practice app with detailed solutions. Track your progress by colour, bookmark tricky words, and learn the ones that actually appear in exams.</p>
+    <div class="cta-row">
+      <button class="btn btn-amber">Get it on Play Store <span class="badge-soon">Coming soon</span></button>
+      <a href="#features" class="btn btn-ghost">See what's inside</a>
+    </div>
+  </div>
+</header>
+
+<section id="features" class="wrap">
+  <div class="eyebrow">Why WhiteOceanBook</div>
+  <h2 class="section-title">Built for exam aspirants</h2>
+  <p class="section-intro">Everything you need to build a strong vocabulary — clean, fast, and distraction-free.</p>
+  <div class="grid">
+    <div class="card"><h3>10,000+ Questions</h3><p>A huge, carefully selected question bank including Previous Year Questions (PYQs) from major exams.</p></div>
+    <div class="card"><h3>Works Offline</h3><p>No internet needed. Practice anytime, anywhere — on the bus, in class, or at home.</p></div>
+    <div class="card"><h3>Detailed Solutions</h3><p>Every question comes with a clear explanation for each option, so you understand, not just memorise.</p></div>
+    <div class="card"><h3>Track by Colour</h3><p>Each set is colour-coded by your latest accuracy, so you instantly see where you're strong and weak.</p></div>
+    <div class="card"><h3>Bookmarks</h3><p>Save tricky questions and revise them later in one place.</p></div>
+    <div class="card"><h3>Dark Mode</h3><p>Comfortable reading day or night, with a clean high-contrast design.</p></div>
+  </div>
+</section>
+
+<section id="topics" class="wrap">
+  <div class="eyebrow">What you'll practice</div>
+  <h2 class="section-title">Topics inside the app</h2>
+  <div class="topics">
+    <div class="topic">One-Word Substitution <span class="on">Active</span></div>
+    <div class="topic">Synonyms <span class="on">Active</span></div>
+    <div class="topic">Antonyms <span class="on">Active</span></div>
+    <div class="topic">Spelling <span class="on">Active</span></div>
+    <div class="topic">Idioms &amp; Phrases <span class="on">Active</span></div>
+    <div class="topic">Wave of English <span class="on">Active</span></div>
+  </div>
+</section>
+
+<section id="progress" class="wrap">
+  <div class="eyebrow">See your growth</div>
+  <h2 class="section-title">Track your progress by colour</h2>
+  <p class="section-intro">Every set is colour-coded by your latest score. One glance shows what's mastered and what needs work.</p>
+
+  <div class="progress-wrap">
+    <div class="sets-demo">
+      <div class="set-cell" style="--c:#F97316;--t:#fff"><b>1</b><small>40%</small></div>
+      <div class="set-cell" style="--c:#EF4444;--t:#fff"><b>2</b><small>0%</small></div>
+      <div class="set-cell" style="--c:#FACC15;--t:#15171F"><b>3</b><small>50%</small></div>
+      <div class="set-cell" style="--c:#4ADE80;--t:#14532D"><b>4</b><small>90%</small></div>
+      <div class="set-cell" style="--c:#EF4444;--t:#fff"><b>5</b><small>0%</small></div>
+      <div class="set-cell" style="--c:#FACC15;--t:#15171F"><b>6</b><small>50%</small></div>
+      <div class="set-cell" style="--c:#15803D;--t:#fff"><b>7</b><small>100%</small></div>
+      <div class="set-cell" style="--c:#EF4444;--t:#fff"><b>8</b><small>20%</small></div>
+      <div class="set-cell" style="--c:#FACC15;--t:#15171F"><b>9</b><small>50%</small></div>
+      <div class="set-cell" style="--c:#4ADE80;--t:#14532D"><b>10</b><small>80%</small></div>
+      <div class="set-cell" style="--c:#4ADE80;--t:#14532D"><b>11</b><small>80%</small></div>
+      <div class="set-cell" style="--c:#EF4444;--t:#fff"><b>12</b><small>20%</small></div>
+      <div class="set-cell" style="--c:#F97316;--t:#fff"><b>13</b><small>40%</small></div>
+      <div class="set-cell" style="--c:#4ADE80;--t:#14532D"><b>14</b><small>80%</small></div>
+      <div class="set-cell" style="--c:#EF4444;--t:#fff"><b>15</b><small>20%</small></div>
+      <div class="set-cell" style="--c:#FACC15;--t:#15171F"><b>16</b><small>50%</small></div>
+      <div class="set-cell" style="--c:#15803D;--t:#fff"><b>17</b><small>100%</small></div>
+      <div class="set-cell" style="--c:#FACC15;--t:#15171F"><b>18</b><small>50%</small></div>
+      <div class="set-cell" style="--c:#F97316;--t:#fff"><b>19</b><small>30%</small></div>
+      <div class="set-cell" style="--c:#15803D;--t:#fff"><b>20</b><small>100%</small></div>
+    </div>
+
+    <div class="legend-card">
+      <h3>Colour guide</h3>
+      <p class="legend-sub">Track your progress by colour</p>
+      <div class="legend">
+        <div><span class="sw" style="background:#fff;border:1px solid var(--border)"></span> Not attempted</div>
+        <div><span class="sw" style="background:#EF4444"></span> 0–24%</div>
+        <div><span class="sw" style="background:#F97316"></span> 25–49%</div>
+        <div><span class="sw" style="background:#FACC15"></span> 50–74%</div>
+        <div><span class="sw" style="background:#4ADE80"></span> 75–94%</div>
+        <div><span class="sw" style="background:#15803D"></span> 95–100%</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="book" class="wrap">
+  <div class="book-card">
+    <div class="eyebrow">The Book</div>
+    <h2 class="section-title" style="color:#fff">A companion book is on the way</h2>
+    <p>WhiteOceanBook pairs the app with a printed book of 10,000+ handpicked questions — including PYQs from SSC CGL, CPO, CHSL, Railway, Banking and more.</p>
+    <div class="book-points">
+      <div>10,000+ questions with detailed solutions</div>
+      <div>Previous Year Questions from major government exams</div>
+      <div>A unique “Wave of English” section for everyday English &amp; exam vocabulary</div>
+      <div>Each book will carry a code to unlock Pro features in the app</div>
+    </div>
+  </div>
+</section>
+
+<section id="privacy" class="wrap">
+  <div class="eyebrow">Your data</div>
+  <h2 class="section-title">Privacy Policy</h2>
+  <div class="privacy" style="margin-top:22px">
+    <p class="updated">Last updated: July 2026</p>
+    <p style="margin-top:12px">WhiteOceanBook (“we”, “our”, “the app”) respects your privacy. This policy explains how the app handles information.</p>
+
+    <h3>Information we collect</h3>
+    <p>The app does <strong>not</strong> collect, store, or share any personal information. We do not ask you to create an account, and we do not access your contacts, photos, location, or files.</p>
+
+    <h3>Data stored on your device</h3>
+    <p>Your quiz progress, accuracy, bookmarks, and app settings (like dark mode) are saved <strong>only on your own device</strong>. This data never leaves your phone and is not sent to us or anyone else. Uninstalling the app removes this data.</p>
+
+    <h3>Advertisements</h3>
+    <p>The app may show ads. If a third-party ad provider (such as Google AdMob) is used, it may collect limited device information to serve ads, as described in its own privacy policy. This is standard for free apps.</p>
+
+    <h3>Children</h3>
+    <p>The app is suitable for students and the general public and does not knowingly collect any personal data from anyone, including children.</p>
+
+    <h3>Changes</h3>
+    <p>We may update this policy from time to time. Any changes will be posted on this page.</p>
+
+    <h3>Contact</h3>
+    <p>For any questions about this policy, email us at <a href="mailto:whiteoceanbook@gmail.com" style="color:var(--blue);font-weight:600">whiteoceanbook@gmail.com</a>.</p>
+  </div>
+</section>
+
+<section id="contact" class="wrap">
+  <div class="eyebrow">Get in touch</div>
+  <h2 class="section-title">Contact us</h2>
+  <p class="section-intro">Questions, feedback, or found a bug? We'd love to hear from you.</p>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <div class="label">Email</div>
+      <a href="mailto:whiteoceanbook@gmail.com">whiteoceanbook@gmail.com</a>
+    </div>
+    <div class="contact-card">
+      <div class="label">Phone</div>
+      <a href="tel:+918875359326">+91 88753 59326</a>
+    </div>
+    <div class="contact-card">
+      <div class="label">Website</div>
+      <span class="val">whiteoceanbook.com</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div class="foot-brand"><span class="logo">WO</span> WhiteOceanBook</div>
+    <div>© 2026 WhiteOceanBook · All rights reserved</div>
+    <div><a href="#privacy">Privacy Policy</a> &nbsp;·&nbsp; <a href="#contact">Contact</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
