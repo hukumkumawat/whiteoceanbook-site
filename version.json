@@ -3,5 +3,5 @@
   "latestVersion": "1.2.1",
   "title": "Update Available",
   "message": "Please update to the latest version for the best experience.",
-  "forceUpdate": false
+  "forceUpdate": true
 }
