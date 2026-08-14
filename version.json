@@ -1,7 +1,7 @@
 {
-  "latestVersionCode": 22,
-  "latestVersion": "2.4.1",
+  "latestVersionCode": 23,
+  "latestVersion": "2.5.1",
   "title": "Update Available",
-  "message": "Please update to the latest version for the best experience.",
+  "message": "We've added new Synonyms & Antonyms levels featuring the top 100 high-frequency vocabulary words asked in SSC exams, and fixed errors in the One Word Substitution section to make it completely error-free. Please update to the latest version for an enhanced learning experience!",
   "forceUpdate": false
 }
