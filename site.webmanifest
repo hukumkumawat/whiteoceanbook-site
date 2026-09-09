@@ -1,0 +1,13 @@
+{
+  "name": "WhiteOceanBook",
+  "short_name": "WhiteOceanBook",
+  "description": "Offline English vocabulary practice for SSC, Banking and competitive exams.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#DDEAE5",
+  "theme_color": "#15173D",
+  "icons": [
+    { "src": "/assets/logo-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/logo-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
